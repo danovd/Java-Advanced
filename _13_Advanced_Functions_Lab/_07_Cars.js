@@ -1,3 +1,6 @@
+   
+/// UNOPTIMIZED version !!!
+/// too much if-else conditions and repetition of code
 function solve(input){
     let arr = []
 let obj = {
@@ -19,8 +22,6 @@ let obj = {
             element[`unchangedName`] = par[0][0];
             arr.push(element);
         }
-      
-
         },
         set: par =>  {
             let name = par[0][0];
@@ -33,11 +34,9 @@ let obj = {
             }else{
                 e = arr.find(e => e['name'] === name);
                 e[property] = value;
-            };
-        
-            
+            };    
         },
-       // "<key1>:<value1>,<key2>:<value2>…
+       
         print: par => { 
             let name = par[0][0];
         
@@ -59,24 +58,16 @@ let obj = {
                  }
                  console.log(result.join(','));
             }
-           
-          
-            
+     
         },
     }
 
     input.forEach(x => {
-        const [command, parameters] = [x.split(' ').splice(0, 1), [x.split(" ").splice(1)]];
+        const [command, parameters] = 
+        [x.split(' ').splice(0, 1), [x.split(" ").splice(1)]];
         obj[command](parameters);
     })
-
-
-
 }
-
-
-
-
 
 // INPUT DATA:
 /*
